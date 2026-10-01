@@ -83,10 +83,10 @@ public class SecurityConfig {
                         .permitAll()
 
                         .requestMatchers("/api/**")
-                        .authenticated()
+                        .permitAll()
 
                         .anyRequest()
-                        .authenticated()
+                        .permitAll()
                 )
 
                 .authenticationProvider(authenticationProvider())
