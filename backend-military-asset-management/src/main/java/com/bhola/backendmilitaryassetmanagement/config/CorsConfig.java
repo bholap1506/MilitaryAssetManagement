@@ -21,17 +21,23 @@ public class CorsConfig {
         ));
 
         configuration.setAllowedMethods(List.of(
-                "GET", "POST", "PUT", "DELETE"
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
         ));
 
         configuration.setAllowedHeaders(List.of(
                 "Authorization",
-                "Content-Type"
+                "Content-Type",
+                "Accept"
         ));
 
         configuration.setAllowCredentials(true);
 
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        UrlBasedCorsConfigurationSource source =
+                new UrlBasedCorsConfigurationSource();
 
         source.registerCorsConfiguration("/**", configuration);
 
